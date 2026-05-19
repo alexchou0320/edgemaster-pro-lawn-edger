@@ -3,438 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EdgeMaster Pro — Manual Lawn Edger | Precision Edging, Zero Emissions</title>
-    <meta name="description" content="Professional manual lawn edger with 3.5-inch wide foot pedal, titanium alloy blade, and ergonomic design. No gas, no cords, no batteries needed.">
+    <title>EdgeMaster® Pro — The Definitive Manual Lawn Edger</title>
+    <meta name="description" content="Precision lawn edging redefined. Titanium alloy blade, 3.5-inch wide foot pedal, ergonomic design. Zero emissions, zero noise, zero compromise.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
     <style>
-        /* ═══════════════════════════════════════
-           RESET & BASE
-           ═══════════════════════════════════════ */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #1a1a2e;
-            background: #fafbfc;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        img { max-width: 100%; height: auto; display: block; }
+        /* ═══════ RESET ═══════ */
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0c0c1d;background:#fafbfc;overflow-x:hidden;line-height:1.6}
+        img{max-width:100%;height:auto;display:block}
+        a{text-decoration:none;color:inherit}
 
-        /* ═══════════════════════════════════════
-           TYPOGRAPHY
-           ═══════════════════════════════════════ */
-        .section-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #4f9d5a;
-            margin-bottom: 0.75rem;
-        }
-        h2 {
-            font-size: clamp(1.75rem, 4vw, 2.75rem);
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-        .subtitle {
-            font-size: 1.05rem;
-            color: #5a5a7a;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
+        /* ═══════ ANIMATIONS ═══════ */
+        @keyframes fadeIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes scaleIn{from{transform:scale(0.92);opacity:0}to{transform:scale(1);opacity:1}}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+        @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+        @keyframes slideLeft{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+        @keyframes slideRight{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+        .reveal{opacity:0;transform:translateY(30px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+        .reveal-left{opacity:0;transform:translateX(-40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+        .reveal-left.visible{opacity:1;transform:translateX(0)}
+        .reveal-right{opacity:0;transform:translateX(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+        .reveal-right.visible{opacity:1;transform:translateX(0)}
 
-        /* ═══════════════════════════════════════
-           LAYOUT
-           ═══════════════════════════════════════ */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        section { padding: 5rem 0; }
+        /* ═══════ UTILITY ═══════ */
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+        .container-wide{max-width:1360px;margin:0 auto;padding:0 24px}
+        .section-label{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#4f9d5a;margin-bottom:.75rem}
+        .section-label.light{color:#8bcb94}
+        section{padding:6rem 0;position:relative}
+        h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1.1;margin-bottom:1rem;letter-spacing:-.025em}
+        h2 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:600}
+        .subtitle{font-size:1.05rem;color:#5a5a7a;max-width:520px;margin:0 auto 2.5rem;line-height:1.7}
 
-        /* ═══════════════════════════════════════
-           HERO
-           ═══════════════════════════════════════ */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #0d2818 0%, #1a3a2a 40%, #1a1a2e 100%);
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-            padding: 6rem 0 4rem;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 80% 60% at 20% 80%, rgba(79,157,90,0.12) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .hero .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(79,157,90,0.18);
-            border: 1px solid rgba(79,157,90,0.3);
-            border-radius: 100px;
-            padding: 0.4rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #8bcb94;
-            margin-bottom: 1.5rem;
-        }
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 800;
-            line-height: 1.08;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-        .hero h1 span { color: #6abf75; }
-        .hero-tagline {
-            font-size: 1.15rem;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 2rem;
-            max-width: 480px;
-        }
-        .hero-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        .hero-meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.6);
-        }
-        .hero-meta-item .icon { font-size: 1.1rem; }
-        .hero-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .hero-image img {
-            width: 100%;
-            max-width: 520px;
-            border-radius: 20px;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-            transform: perspective(1000px) rotateY(-5deg);
-            transition: transform 0.6s ease;
-        }
-        .hero-image img:hover { transform: perspective(1000px) rotateY(0deg); }
+        /* ═══════ NAV ═══════ */
+        nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.8rem 0;transition:all .4s ease;background:transparent}
+        nav.scrolled{background:rgba(12,12,29,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+        nav .container{display:flex;align-items:center;justify-content:space-between}
+        .logo{font-weight:800;font-size:1.15rem;color:#fff;letter-spacing:-.02em}
+        .logo span{color:#6abf75}
+        .nav-links{display:flex;gap:2rem;list-style:none;font-size:.85rem;font-weight:500;color:rgba(255,255,255,.6)}
+        .nav-links a{transition:color .25s}
+        .nav-links a:hover{color:#fff}
 
-        /* ═══════════════════════════════════════
-           BUTTONS
-           ═══════════════════════════════════════ */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.9rem 2rem;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            border: none;
-        }
-        .btn-primary {
-            background: #4f9d5a;
-            color: #fff;
-        }
-        .btn-primary:hover { background: #3d8648; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(79,157,90,0.35); }
-        .btn-secondary {
-            background: rgba(255,255,255,0.08);
-            color: #fff;
-            border: 1px solid rgba(255,255,255,0.15);
-        }
-        .btn-secondary:hover { background: rgba(255,255,255,0.14); }
-        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+        /* ═══════ HERO ═══════ */
+        .hero{min-height:100vh;display:flex;align-items:center;background:#0c0c1d;color:#fff;position:relative;overflow:hidden;padding:0}
+        .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;filter:brightness(.6)}
+        .hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 30% 80%,rgba(79,157,90,.15) 0%,transparent 70%),linear-gradient(180deg,transparent 0%,#0c0c1d 100%);pointer-events:none}
+        .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;z-index:2;padding-top:5rem}
+        .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(79,157,90,.15);border:1px solid rgba(79,157,90,.25);border-radius:100px;padding:.35rem .9rem;font-size:.75rem;font-weight:500;color:#8bcb94;margin-bottom:1.5rem;animation:fadeIn .8s ease}
+        .hero h1{font-size:clamp(2.8rem,6.5vw,4.5rem);font-weight:800;line-height:1.05;margin-bottom:1rem;letter-spacing:-.03em;animation:fadeIn .8s .15s both}
+        .hero h1 .accent{background:linear-gradient(135deg,#6abf75,#4f9d5a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero h1 .accent2{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:#fff}
+        .hero-tagline{font-size:1.1rem;color:rgba(255,255,255,.55);margin-bottom:2rem;max-width:440px;line-height:1.7;animation:fadeIn .8s .3s both}
+        .hero-stats{display:flex;gap:2rem;margin-bottom:2rem;animation:fadeIn .8s .4s both}
+        .hero-stat{text-align:left}
+        .hero-stat .num{font-size:1.5rem;font-weight:800;color:#6abf75;line-height:1}
+        .hero-stat .label{font-size:.75rem;color:rgba(255,255,255,.4);margin-top:.2rem}
+        .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeIn .8s .5s both}
+        .hero-image{position:relative;display:flex;justify-content:center;animation:scaleIn 1s .3s both}
+        .hero-image .main-img{width:100%;max-width:520px;border-radius:16px;box-shadow:0 40px 120px rgba(0,0,0,.5);transform:perspective(1200px) rotateY(-4deg);transition:all .8s cubic-bezier(0.16,1,0.3,1)}
+        .hero-image .main-img:hover{transform:perspective(1200px) rotateY(0deg) scale(1.02)}
+        .hero-image .float-badge{position:absolute;background:rgba(12,12,29,.8);backdrop-filter:blur(12px);border-radius:12px;padding:.6rem 1rem;font-size:.75rem;color:#fff;display:flex;align-items:center;gap:.5rem;animation:float 4s ease-in-out infinite}
+        .hero-image .float-badge.b1{top:-10px;left:-20px}
+        .hero-image .float-badge.b2{bottom:30px;right:-20px;animation-delay:2s}
+        .float-badge .icon{font-size:1rem}
 
-        /* ═══════════════════════════════════════
-           TRUST BAR
-           ═══════════════════════════════════════ */
-        .trust-bar {
-            background: #fff;
-            border-bottom: 1px solid #e8ecf0;
-            padding: 1.2rem 0;
-        }
-        .trust-bar .container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2.5rem;
-        }
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #4a4a6a;
-        }
-        .trust-item .icon { font-size: 1.2rem; }
+        /* ═══════ BUTTONS ═══════ */
+        .btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 2.2rem;border-radius:12px;font-weight:600;font-size:.95rem;cursor:pointer;transition:all .3s cubic-bezier(0.16,1,0.3,1);border:none}
+        .btn-primary{background:linear-gradient(135deg,#4f9d5a,#3d8648);color:#fff;box-shadow:0 4px 20px rgba(79,157,90,.3)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(79,157,90,.4)}
+        .btn-secondary{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.12)}
+        .btn-secondary:hover{background:rgba(255,255,255,.15)}
+        .btn-outline{background:transparent;color:#1a1a2e;border:2px solid #1a1a2e}
+        .btn-outline:hover{background:#1a1a2e;color:#fff}
 
-        /* ═══════════════════════════════════════
-           FEATURES
-           ═══════════════════════════════════════ */
-        .features {
-            background: #ffffff;
-        }
-        .features-header { text-align: center; margin-bottom: 3.5rem; }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-        .feature-card {
-            background: #f8f9fb;
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-        .feature-card:hover {
-            background: #fff;
-            border-color: #e0e6ed;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-            transform: translateY(-4px);
-        }
-        .feature-card .img-wrap {
-            border-radius: 14px;
-            overflow: hidden;
-            margin-bottom: 1.25rem;
-            background: #eef0f3;
-            aspect-ratio: 1/1;
-        }
-        .feature-card .img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .feature-card:hover .img-wrap img { transform: scale(1.04); }
-        .feature-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.4rem;
-        }
-        .feature-card p {
-            font-size: 0.9rem;
-            color: #5a5a7a;
-            line-height: 1.6;
-        }
+        /* ═══════ TRUST BAR ═══════ */
+        .trust-bar{background:#fff;border-bottom:1px solid #e8ecf0;padding:.9rem 0}
+        .trust-bar .container{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem}
+        .trust-item{display:flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:500;color:#4a4a6a}
 
-        /* ═══════════════════════════════════════
-           GALLERY / LIFESTYLE
-           ═══════════════════════════════════════ */
-        .gallery-section {
-            background: #0d2818;
-            color: #fff;
-        }
-        .gallery-section .section-label { color: #8bcb94; }
-        .gallery-section .subtitle { color: rgba(255,255,255,0.6); }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-        }
-        .gallery-grid .img-card {
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-        }
-        .gallery-grid .img-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-        .gallery-grid .img-card:hover img { transform: scale(1.05); }
-        .gallery-grid .img-card.tall { grid-row: span 2; }
-        .gallery-grid .img-card.wide { grid-column: span 2; }
+        /* ═══════ BRAND STORY ═══════ */
+        .brand-story{background:#fff;padding:5rem 0}
+        .brand-story .container{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .brand-story .story-text h2{font-size:clamp(1.8rem,3vw,2.5rem)}
+        .brand-story .story-text p{font-size:.95rem;color:#5a5a7a;line-height:1.8;margin-bottom:1rem}
+        .story-image{border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.1)}
+        .story-image img{width:100%;height:420px;object-fit:cover;transition:transform .8s ease}
+        .story-image:hover img{transform:scale(1.04)}
+        .signature{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:#4f9d5a;margin-top:1rem}
 
-        .gallery-grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-        }
-        .gallery-grid-3 .img-card {
-            border-radius: 16px;
-            overflow: hidden;
-            aspect-ratio: 1/1;
-        }
-        .gallery-grid-3 .img-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-        .gallery-grid-3 .img-card:hover img { transform: scale(1.05); }
+        /* ═══════ FEATURES ═══════ */
+        .features-section{background:linear-gradient(180deg,#f8f9fb 0%,#fff 100%)}
+        .features-header{text-align:center;margin-bottom:4rem}
+        .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+        .feature-card{background:#fff;border-radius:20px;overflow:hidden;transition:all .5s cubic-bezier(0.16,1,0.3,1);border:1px solid #eef0f3;box-shadow:0 2px 10px rgba(0,0,0,.02)}
+        .feature-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,0,0,.08);border-color:#d0d8e0}
+        .feature-card .img-wrap{height:280px;overflow:hidden;background:#eef0f3}
+        .feature-card .img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+        .feature-card:hover .img-wrap img{transform:scale(1.06)}
+        .feature-card .body{padding:1.5rem 1.5rem 2rem}
+        .feature-card .body h3{font-size:1.1rem;font-weight:700;margin-bottom:.4rem}
+        .feature-card .body h3 .icon{display:inline-block;margin-right:.4rem}
+        .feature-card .body p{font-size:.88rem;color:#5a5a7a;line-height:1.7}
 
-        /* ═══════════════════════════════════════
-           SPECS TABLE
-           ═══════════════════════════════════════ */
-        .specs { background: #fff; }
-        .specs-header { text-align: center; margin-bottom: 3rem; }
-        .specs-table {
-            max-width: 700px;
-            margin: 0 auto;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        .specs-table tr {
-            border-bottom: 1px solid #e8ecf0;
-        }
-        .specs-table tr:last-child { border: none; }
-        .specs-table td {
-            padding: 1rem 1.5rem;
-            font-size: 0.95rem;
-        }
-        .specs-table td:first-child {
-            font-weight: 600;
-            color: #1a1a2e;
-            white-space: nowrap;
-            width: 35%;
-        }
-        .specs-table td:last-child { color: #5a5a7a; }
+        /* ═══════ GALLERY GRID ═══════ */
+        .gallery-section{background:#0c0c1d;color:#fff;padding:6rem 0}
+        .gallery-header{text-align:center;margin-bottom:3rem}
+        .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto;gap:1rem}
+        .gallery-grid .img-card{border-radius:14px;overflow:hidden;position:relative;cursor:pointer}
+        .gallery-grid .img-card img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+        .gallery-grid .img-card:hover img{transform:scale(1.06)}
+        .gallery-grid .img-card.tall{grid-row:span 2}
+        .gallery-grid .img-card.wide{grid-column:span 2}
+        .gallery-grid .img-card:not(.tall):not(.wide){aspect-ratio:1/1}
+        .gallery-grid .img-card.tall{grid-row:span 2;min-height:400px}
+        .gallery-grid .img-card.wide{grid-column:span 2;aspect-ratio:2/1}
 
-        /* ═══════════════════════════════════════
-           WHAT'S IN THE BOX
-           ═══════════════════════════════════════ */
-        .inbox {
-            background: #f3f6f8;
-        }
-        .inbox .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        .inbox-image {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 16px 50px rgba(0,0,0,0.08);
-        }
-        .inbox-list { list-style: none; }
-        .inbox-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #e0e6ed;
-        }
-        .inbox-list li:last-child { border: none; }
-        .inbox-list .check {
-            width: 24px;
-            height: 24px;
-            background: #4f9d5a;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            color: #fff;
-            font-size: 0.75rem;
-            margin-top: 2px;
-        }
-        .inbox-list .item-title { font-weight: 600; margin-bottom: 0.1rem; }
-        .inbox-list .item-desc { font-size: 0.85rem; color: #5a5a7a; }
+        /* ═══════ DETAIL SHOTS ═══════ */
+        .details-section{background:#fff}
+        .details-header{text-align:center;margin-bottom:3rem}
+        .details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+        .detail-card{border-radius:16px;overflow:hidden;position:relative;aspect-ratio:1/1;cursor:pointer}
+        .detail-card img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+        .detail-card:hover img{transform:scale(1.06)}
+        .detail-card .overlay{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;transform:translateY(10px);opacity:0;transition:all .4s ease}
+        .detail-card:hover .overlay{opacity:1;transform:translateY(0)}
+        .detail-card .overlay h4{font-size:.9rem;font-weight:600;margin-bottom:.15rem}
+        .detail-card .overlay p{font-size:.75rem;opacity:.7}
 
-        /* ═══════════════════════════════════════
-           CTA
-           ═══════════════════════════════════════ */
-        .cta-section {
-            background: linear-gradient(135deg, #0d2818 0%, #1a3a2a 50%, #0d2818 100%);
-            color: #fff;
-            text-align: center;
-            padding: 6rem 0;
-        }
-        .cta-section h2 { margin-bottom: 0.75rem; }
-        .cta-section .subtitle { color: rgba(255,255,255,0.6); }
-        .cta-section .btn-primary {
-            font-size: 1.05rem;
-            padding: 1.1rem 2.8rem;
-            margin-top: 1.5rem;
-        }
-        .cta-price {
-            font-size: 1.2rem;
-            margin-top: 1rem;
-            color: rgba(255,255,255,0.5);
-        }
-        .cta-price strong { color: #6abf75; font-size: 1.4rem; }
+        /* ═══════ BEFORE/AFTER ═══════ */
+        .ba-section{background:#f3f6f8}
+        .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:20px;overflow:hidden;box-shadow:0 16px 60px rgba(0,0,0,.08)}
+        .ba-half{position:relative;overflow:hidden}
+        .ba-half img{width:100%;height:400px;object-fit:cover;display:block}
+        .ba-label{position:absolute;top:1rem;left:1rem;padding:.35rem 1rem;border-radius:100px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+        .ba-label.before{background:rgba(0,0,0,.6);color:#fff}
+        .ba-label.after{background:rgba(79,157,90,.9);color:#fff}
+        .ba-caption{text-align:center;margin-top:1.5rem;font-size:.9rem;color:#5a5a7a;font-weight:500}
 
-        /* ═══════════════════════════════════════
-           FOOTER
-           ═══════════════════════════════════════ */
-        footer {
-            background: #0a0a1a;
-            color: rgba(255,255,255,0.4);
-            padding: 2rem 0;
-            text-align: center;
-            font-size: 0.8rem;
-        }
+        /* ═══════ SPECS ═══════ */
+        .specs-section{background:#fff}
+        .specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+        .specs-table{width:100%;border-collapse:collapse}
+        .specs-table tr{border-bottom:1px solid #e8ecf0}
+        .specs-table tr:last-child{border:none}
+        .specs-table td{padding:1rem .5rem;font-size:.92rem}
+        .specs-table td:first-child{font-weight:600;width:40%;color:#1a1a2e}
+        .specs-table td:last-child{color:#5a5a7a}
+        .specs-image{border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.08)}
+        .specs-image img{width:100%;height:auto;transition:transform .8s ease}
+        .specs-image:hover img{transform:scale(1.03)}
 
-        /* ═══════════════════════════════════════
-           RESPONSIVE
-           ═══════════════════════════════════════ */
-        @media (max-width: 968px) {
-            .hero .container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-tagline { margin: 0 auto 2rem; }
-            .hero-meta, .hero-actions { justify-content: center; }
-            .hero-image img { max-width: 80%; }
-            .features-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
-            .inbox .container { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: 1fr; }
-            .gallery-grid-3 { grid-template-columns: 1fr; }
-            .specs-table td:first-child { width: auto; display: block; padding-bottom: 0.2rem; }
-            .specs-table td:last-child { display: block; padding-top: 0; }
-            .specs-table tr { display: block; padding: 0.8rem 1rem; }
+        /* ═══════ WHY CHOOSE ═══════ */
+        .why-section{background:linear-gradient(135deg,#0c0c1d 0%,#152020 50%,#0c0c1d 100%);color:#fff}
+        .why-header{text-align:center;margin-bottom:3.5rem}
+        .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .why-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:2rem;text-align:center;transition:all .4s ease}
+        .why-card:hover{background:rgba(255,255,255,.08);transform:translateY(-4px)}
+        .why-card .big-icon{font-size:2.5rem;margin-bottom:1rem}
+        .why-card h3{font-size:1rem;font-weight:700;margin-bottom:.4rem}
+        .why-card p{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.6}
+
+        /* ═══════ NEWSLETTER ═══════ */
+        .newsletter{background:#f3f6f8;text-align:center;padding:4rem 0}
+        .newsletter h2{font-size:clamp(1.5rem,3vw,2rem)}
+        .newsletter-form{display:flex;max-width:440px;margin:1.5rem auto 0;gap:.5rem}
+        .newsletter-form input{flex:1;padding:.9rem 1.2rem;border-radius:12px;border:1px solid #d0d8e0;font-size:.9rem;outline:none;transition:border-color .3s}
+        .newsletter-form input:focus{border-color:#4f9d5a}
+        .newsletter-form button{padding:.9rem 1.5rem;background:#4f9d5a;color:#fff;border:none;border-radius:12px;font-weight:600;cursor:pointer;transition:all .3s}
+        .newsletter-form button:hover{background:#3d8648}
+
+        /* ═══════ FAQ ═══════ */
+        .faq-section{background:#fff}
+        .faq-header{text-align:center;margin-bottom:3rem}
+        .faq-list{max-width:720px;margin:0 auto}
+        .faq-item{border-bottom:1px solid #e8ecf0;padding:0}
+        .faq-q{padding:1.2rem 0;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:.95rem;transition:color .3s}
+        .faq-q:hover{color:#4f9d5a}
+        .faq-q .arrow{transition:transform .4s;font-size:.8rem}
+        .faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+        .faq-a{padding:0 0 1.2rem;font-size:.88rem;color:#5a5a7a;line-height:1.7;display:none}
+        .faq-item.open .faq-a{display:block;animation:fadeIn .4s ease}
+
+        /* ═══════ CTA ═══════ */
+        .cta-section{background:linear-gradient(135deg,#0c0c1d 0%,#1a3a2a 50%,#0c0c1d 100%);color:#fff;text-align:center;padding:7rem 0;position:relative;overflow:hidden}
+        .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 100%,rgba(79,157,90,.08) 0%,transparent 70%);pointer-events:none}
+        .cta-section h2{font-size:clamp(2rem,4vw,3rem)}
+        .cta-section .subtitle{color:rgba(255,255,255,.5);max-width:500px}
+        .cta-price{font-size:1.1rem;margin-top:.25rem;color:rgba(255,255,255,.4)}
+        .cta-price strong{color:#6abf75;font-size:2rem;font-weight:800}
+        .cta-price .original{text-decoration:line-through;color:rgba(255,255,255,.2);font-size:.9rem}
+        .cta-strip{display:flex;justify-content:center;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+        .cta-strip span{font-size:.8rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:.4rem}
+
+        /* ═══════ FOOTER ═══════ */
+        footer{background:#08081a;color:rgba(255,255,255,.3);padding:3rem 0 1.5rem}
+        footer .container{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}
+        footer .brand{font-weight:700;font-size:1rem;color:rgba(255,255,255,.6);margin-bottom:.5rem}
+        footer .brand span{color:#6abf75}
+        footer p{font-size:.8rem;line-height:1.6}
+        footer h4{font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:.8rem;text-transform:uppercase;letter-spacing:.1em}
+        footer ul{list-style:none}
+        footer ul li{margin-bottom:.4rem}
+        footer ul li a{font-size:.8rem;color:rgba(255,255,255,.3);transition:color .3s}
+        footer ul li a:hover{color:rgba(255,255,255,.6)}
+        footer .copyright{grid-column:1/-1;text-align:center;padding-top:2rem;margin-top:2rem;border-top:1px solid rgba(255,255,255,.05);font-size:.75rem}
+
+        /* ═══════ SPLIT HERO ═══════ */
+        .split-section{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:80vh}
+        .split-image{overflow:hidden}
+        .split-image img{width:100%;height:100%;object-fit:cover}
+        .split-content{display:flex;flex-direction:column;justify-content:center;padding:3rem 4rem;background:#fff}
+        .split-content h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1rem}
+        .split-content .subtitle{margin:0 0 1.5rem}
+        .split-content ul{list-style:none}
+        .split-content ul li{display:flex;gap:.8rem;padding:.5rem 0;font-size:.9rem;color:#4a4a6a;align-items:flex-start}
+        .split-content ul li .check{width:20px;height:20px;min-width:20px;background:#4f9d5a;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.6rem;margin-top:2px}
+
+        /* ═══════ RESPONSIVE ═══════ */
+        @media(max-width:968px){
+            .hero .container,.brand-story .container,.specs-grid{grid-template-columns:1fr}
+            .hero-text{text-align:center}
+            .hero-tagline{margin:0 auto 2rem}
+            .hero-stats,.hero-actions{justify-content:center}
+            .hero-image .main-img{max-width:80%}
+            .features-grid{grid-template-columns:1fr;max-width:500px;margin:0 auto}
+            .gallery-grid{grid-template-columns:1fr 1fr}
+            .gallery-grid .img-card.wide,.gallery-grid .img-card.tall{grid-column:span 1;grid-row:span 1}
+            .details-grid{grid-template-columns:1fr}
+            .why-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+            .split-section{grid-template-columns:1fr}
+            .split-content{padding:2rem 1.5rem}
+            nav .nav-links{display:none}
+            .ba-grid{grid-template-columns:1fr}
+            footer .container{grid-template-columns:1fr;gap:1.5rem}
+            .newsletter-form{flex-direction:column}
         }
     </style>
 </head>
 <body>
 
+<!-- ═══ NAV ═══ -->
+<nav id="nav">
+    <div class="container">
+        <div class="logo">EdgeMaster<span>®</span></div>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#specs">Specs</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#cta">Shop</a></li>
+        </ul>
+    </div>
+</nav>
+
 <!-- ═══ HERO ═══ -->
 <section class="hero" id="home">
+    <img src="images/hero-cinematic.png" alt="" class="hero-bg" loading="eager">
+    <div class="hero-overlay"></div>
     <div class="container">
         <div class="hero-text">
-            <div class="hero-badge">🌱 New — 2026 Edition</div>
-            <h1>EdgeMaster <span>Pro</span><br>Manual Lawn Edger</h1>
-            <p class="hero-tagline">Precision lawn edging with zero emissions, zero noise, and zero maintenance. The 3.5" wide foot pedal and titanium alloy blade deliver clean, professional results — no gas or batteries required.</p>
-            <div class="hero-meta">
-                <span class="hero-meta-item"><span class="icon">🔩</span> Titanium Alloy Blade</span>
-                <span class="hero-meta-item"><span class="icon">🦶</span> 3.5" Wide Foot Pedal</span>
-                <span class="hero-meta-item"><span class="icon">🤲</span> Ergonomic Grip</span>
-                <span class="hero-meta-item"><span class="icon">🌿</span> Zero Emissions</span>
+            <div class="hero-badge">✦ 2026 Edition — Now Available</div>
+            <h1>
+                The EdgeMaster<br>
+                <span class="accent">Pro</span>
+                <span class="accent2">Manual Edger</span>
+            </h1>
+            <p class="hero-tagline">Precision lawn edging redefined. Titanium alloy blade, 3.5-inch wide foot pedal, and ergonomic design — zero emissions, zero noise, zero compromise.</p>
+            <div class="hero-stats">
+                <div class="hero-stat"><div class="num">4.5</div><div class="label">lbs light</div></div>
+                <div class="hero-stat"><div class="num">3.5"</div><div class="label">wide pedal</div></div>
+                <div class="hero-stat"><div class="num">3×</div><div class="label">blade life</div></div>
+                <div class="hero-stat"><div class="num">∞</div><div class="label">battery free</div></div>
             </div>
             <div class="hero-actions">
-                <a href="#features" class="btn btn-primary">Explore Features ↓</a>
-                <a href="#cta" class="btn btn-secondary">Shop Now</a>
+                <a href="#cta" class="btn btn-primary">🛒 Pre-Order Now</a>
+                <a href="#gallery" class="btn btn-secondary">View Gallery ↓</a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="images/hero.png" alt="EdgeMaster Pro Manual Lawn Edger" loading="eager">
+            <img src="images/hero.png" alt="EdgeMaster Pro" class="main-img" loading="eager">
+            <div class="float-badge b1"><span class="icon">🔩</span> Titanium Blade</div>
+            <div class="float-badge b2"><span class="icon">⭐</span> Premium Build</div>
         </div>
     </div>
 </section>
@@ -442,118 +297,272 @@
 <!-- ═══ TRUST BAR ═══ -->
 <section class="trust-bar">
     <div class="container">
-        <span class="trust-item"><span class="icon">✅</span> 30-Day Money-Back</span>
-        <span class="trust-item"><span class="icon">🚚</span> Free Shipping Over $50</span>
-        <span class="trust-item"><span class="icon">🔒</span> Secure Checkout</span>
-        <span class="trust-item"><span class="icon">⭐</span> Premium Quality</span>
+        <span class="trust-item">✦ 30-Day Guarantee</span>
+        <span class="trust-item">✦ Free Shipping Over $50</span>
+        <span class="trust-item">✦ Secure Checkout</span>
+        <span class="trust-item">✦ Premium Materials</span>
+        <span class="trust-item">✦ USA Warehouse</span>
+    </div>
+</section>
+
+<!-- ═══ BRAND STORY ═══ -->
+<section class="brand-story" id="story">
+    <div class="container">
+        <div class="story-text reveal-left">
+            <div class="section-label">Our Story</div>
+            <h2>From Garden Frustration<br>to <em>EdgeMaster</em></h2>
+            <p>We believe the best tools are the ones that let you forget you're holding them. The EdgeMaster Pro was born from a simple observation: gas-powered edgers are noisy, messy, and over-engineered for what should be a peaceful weekend ritual.</p>
+            <p>After months of prototyping with professional landscapers and backyard gardeners alike, we created something different — a tool that makes edging feel effortless. The wide foot pedal transfers your weight naturally. The titanium blade glides through turf. The ergonomic handle becomes an extension of your arm.</p>
+            <p>No batteries to charge. No fuel to mix. No cords to untangle. Just you, the garden, and the satisfying sound of a clean cut.</p>
+            <div class="signature">— The EdgeMaster Team</div>
+        </div>
+        <div class="story-image reveal-right">
+            <img src="images/lifestyle-sunset.png" alt="EdgeMaster Pro in the garden" loading="lazy">
+        </div>
     </div>
 </section>
 
 <!-- ═══ FEATURES ═══ -->
-<section class="features" id="features">
+<section class="features-section" id="features">
     <div class="container">
-        <div class="features-header">
-            <div class="section-label">Features</div>
-            <h2>Built for Precision, Designed for Comfort</h2>
-            <p class="subtitle">Every detail of the EdgeMaster Pro is engineered to make lawn edging effortless and satisfying.</p>
+        <div class="features-header reveal">
+            <div class="section-label">The Difference</div>
+            <h2>Three Innovations,<br>One <em>Purpose</em></h2>
+            <p class="subtitle">Every millimeter of the EdgeMaster Pro is engineered to make lawn care more satisfying.</p>
         </div>
         <div class="features-grid">
-            <div class="feature-card">
-                <div class="img-wrap"><img src="images/pedal.png" alt="Wide foot pedal" loading="lazy"></div>
-                <h3>3.5" Wide Foot Pedal</h3>
-                <p>Extra-wide stamped steel pedal delivers maximum leverage and comfort. Reduces foot fatigue during extended use and provides precise control with every step.</p>
+            <div class="feature-card reveal">
+                <div class="img-wrap"><img src="images/pedal-premium.png" alt="Wide foot pedal" loading="lazy"></div>
+                <div class="body">
+                    <h3><span class="icon">🦶</span>3.5" Wide Foot Pedal</h3>
+                    <p>Extra-wide stamped steel pedal delivers maximum leverage with every step. Reduces foot fatigue and gives you precise control — even on tough soil.</p>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="img-wrap"><img src="images/blade.png" alt="Titanium alloy blade" loading="lazy"></div>
-                <h3>Titanium Alloy Blade</h3>
-                <p>Heat-treated titanium alloy blade stays sharper 3x longer than standard steel. Designed for clean, crisp cuts through grass and soft soil without frequent replacements.</p>
+            <div class="feature-card reveal">
+                <div class="img-wrap"><img src="images/blade-premium.png" alt="Titanium blade" loading="lazy"></div>
+                <div class="body">
+                    <h3><span class="icon">🔩</span>Titanium Alloy Blade</h3>
+                    <p>Heat-treated titanium alloy stays razor-sharp 3× longer than standard steel. Cuts cleanly through grass and soft soil without frequent replacements.</p>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="img-wrap"><img src="images/handle.png" alt="Ergonomic handle" loading="lazy"></div>
-                <h3>Comfort Grip Handle</h3>
-                <p>Soft-touch rubberized handle with anti-slip texture fits naturally in your hand. Reduces vibration and strain so you can edge your entire yard without discomfort.</p>
+            <div class="feature-card reveal">
+                <div class="img-wrap"><img src="images/handle-premium.png" alt="Ergonomic handle" loading="lazy"></div>
+                <div class="body">
+                    <h3><span class="icon">🤲</span>Comfort Grip Handle</h3>
+                    <p>Soft-touch rubberized grip with anti-slip texture fits naturally in your hand. Reduces vibration so you can edge your entire yard without fatigue.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ═══ GALLERY ═══ -->
-<section class="gallery-section">
-    <div class="container">
-        <div style="text-align:center;">
-            <div class="section-label">In Action</div>
-            <h2>See the EdgeMaster Pro at Work</h2>
-            <p class="subtitle">From creating crisp garden borders to tidying up walkways — get professional results in minutes.</p>
+<section class="gallery-section" id="gallery">
+    <div class="container-wide">
+        <div class="gallery-header reveal">
+            <div class="section-label light">Gallery</div>
+            <h2>Designed to Be <em>Seen</em></h2>
+            <p class="subtitle" style="color:rgba(255,255,255,.5)">From the workshop to your lawn — the EdgeMaster Pro is built to be admired.</p>
         </div>
         <div class="gallery-grid">
-            <div class="img-card tall"><img src="images/lifestyle.png" alt="Person using lawn edger in garden" loading="lazy"></div>
-            <div class="img-card"><img src="images/action.png" alt="Lawn edger cutting edge" loading="lazy"></div>
-            <div class="img-card"><img src="images/features.png" alt="EdgeMaster Pro side view" loading="lazy"></div>
+            <div class="img-card tall"><img src="images/hero-angle2.png" alt="Rear view" loading="lazy"></div>
+            <div class="img-card"><img src="images/lifestyle-sunset.png" alt="Sunset garden" loading="lazy"></div>
+            <div class="img-card"><img src="images/lifestyle-modern.png" alt="Modern garden" loading="lazy"></div>
+            <div class="img-card wide"><img src="images/flatlay-wood.png" alt="Flat lay on wood" loading="lazy"></div>
+            <div class="img-card"><img src="images/action-dynamic.png" alt="In action" loading="lazy"></div>
+            <div class="img-card"><img src="images/lifestyle.png" alt="Garden use" loading="lazy"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ DETAIL SHOTS ═══ -->
+<section class="details-section">
+    <div class="container">
+        <div class="details-header reveal">
+            <div class="section-label">Crafted Details</div>
+            <h2>Zoom In on <em>Quality</em></h2>
+            <p class="subtitle">Every component tells a story of thoughtful engineering.</p>
+        </div>
+        <div class="details-grid">
+            <div class="detail-card reveal">
+                <img src="images/blade-premium.png" alt="Titanium blade detail" loading="lazy">
+                <div class="overlay"><h4>Titanium Alloy Blade</h4><p>Heat-treated for 3× longer sharpness</p></div>
+            </div>
+            <div class="detail-card reveal">
+                <img src="images/pedal-premium.png" alt="Foot pedal detail" loading="lazy">
+                <div class="overlay"><h4>3.5" Wide Pedal</h4><p>Maximum leverage, minimal effort</p></div>
+            </div>
+            <div class="detail-card reveal">
+                <img src="images/handle-premium.png" alt="Handle detail" loading="lazy">
+                <div class="overlay"><h4>Comfort Grip</h4><p>Anti-slip, vibration-dampening design</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ BEFORE/AFTER ═══ -->
+<section class="ba-section">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:2.5rem" class="reveal">
+            <div class="section-label">The Proof</div>
+            <h2>Before <em>&amp;</em> After</h2>
+            <p class="subtitle">One pass. One tool. See the difference a real edge makes.</p>
+        </div>
+        <div class="ba-grid reveal">
+            <div class="ba-half">
+                <span class="ba-label before">Before</span>
+                <img src="images/before-after.png" alt="Before" style="object-position:left" loading="lazy">
+            </div>
+            <div class="ba-half">
+                <span class="ba-label after">After</span>
+                <img src="images/before-after.png" alt="After" style="object-position:right" loading="lazy">
+            </div>
+        </div>
+        <p class="ba-caption">The EdgeMaster Pro transforms overgrown borders into crisp, professional-grade edges in minutes.</p>
+    </div>
+</section>
+
+<!-- ═══ WHAT'S IN THE BOX ═══ -->
+<section class="split-section" style="background:#fff">
+    <div class="split-image reveal-left">
+        <img src="images/package.png" alt="What's in the box" loading="lazy">
+    </div>
+    <div class="split-content reveal-right">
+        <div class="section-label">Unboxing</div>
+        <h2>Everything You <em>Need</em></h2>
+        <p class="subtitle">Open the box and start edging. No assembly, no extra trips.</p>
+        <ul>
+            <li><span class="check">✓</span><div><strong>EdgeMaster Pro Unit</strong><br><span style="font-size:.82rem;color:#5a5a7a">Fully assembled — ready to use</span></div></li>
+            <li><span class="check">✓</span><div><strong>2 Spare Titanium Blades</strong><br><span style="font-size:.82rem;color:#5a5a7a">Extended cutting life for seasons ahead</span></div></li>
+            <li><span class="check">✓</span><div><strong>Quick-Start Guide</strong><br><span style="font-size:.82rem;color:#5a5a7a">Tips from professional landscapers</span></div></li>
+            <li><span class="check">✓</span><div><strong>Premium Storage Pouch</strong><br><span style="font-size:.82rem;color:#5a5a7a">Keep your edger clean and protected</span></div></li>
+            <li><span class="check">✓</span><div><strong>Lawn Care E-Book</strong><br><span style="font-size:.82rem;color:#5a5a7a">Pro secrets for a picture-perfect lawn</span></div></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ═══ WHY CHOOSE ═══ -->
+<section class="why-section">
+    <div class="container">
+        <div class="why-header reveal">
+            <div class="section-label light">Why EdgeMaster</div>
+            <h2>Why We're <em>Different</em></h2>
+            <p class="subtitle" style="color:rgba(255,255,255,.5)">In a world of noisy machines, we chose silence.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card reveal">
+                <div class="big-icon">🔇</div>
+                <h3>Silent Operation</h3>
+                <p>No engine noise means you can edge at 7 AM without waking the neighbors — or enjoy the sounds of your garden.</p>
+            </div>
+            <div class="why-card reveal">
+                <div class="big-icon">🌱</div>
+                <h3>Zero Emissions</h3>
+                <p>No gas, no oil, no fumes. Just clean, manual power that's better for you and your lawn.</p>
+            </div>
+            <div class="why-card reveal">
+                <div class="big-icon">🔧</div>
+                <h3>Virtually Maintenance-Free</h3>
+                <p>No spark plugs, no carburetors, no charging. Rinse it off and put it away — it's that simple.</p>
+            </div>
+            <div class="why-card reveal">
+                <div class="big-icon">⚖️</div>
+                <h3>Lightweight Design</h3>
+                <p>At just 4.5 lbs, the EdgeMaster Pro is easy to carry, maneuver, and store — no garage space required.</p>
+            </div>
+            <div class="why-card reveal">
+                <div class="big-icon">💪</div>
+                <h3>Built to Last</h3>
+                <p>Titanium blade, steel frame, rubberized grip — materials chosen for durability, not disposability.</p>
+            </div>
+            <div class="why-card reveal">
+                <div class="big-icon">❤️</div>
+                <h3>Satisfaction Guarantee</h3>
+                <p>30-day money-back guarantee. If you don't love it, return it. No questions asked.</p>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- ═══ SPECS ═══ -->
-<section class="specs" id="specs">
+<section class="specs-section" id="specs">
     <div class="container">
-        <div class="specs-header">
-            <div class="section-label">Technical Specs</div>
-            <h2>Built to Last</h2>
-            <p class="subtitle">Premium materials and thoughtful engineering make the EdgeMaster Pro a tool you'll reach for season after season.</p>
+        <div class="specs-grid">
+            <div class="reveal-left">
+                <div class="section-label">Specifications</div>
+                <h2>Engineered to <em>Excellence</em></h2>
+                <p class="subtitle" style="margin-left:0">Every specification is a promise.</p>
+                <table class="specs-table">
+                    <tr><td>Dimensions</td><td>36" × 8" × 4"</td></tr>
+                    <tr><td>Weight</td><td>4.5 lbs (2.04 kg)</td></tr>
+                    <tr><td>Blade Material</td><td>Titanium Alloy, heat-treated</td></tr>
+                    <tr><td>Foot Pedal</td><td>3.5" wide, stamped steel</td></tr>
+                    <tr><td>Handle</td><td>Steel core, rubberized grip</td></tr>
+                    <tr><td>Wheel</td><td>7" diameter, smooth-rolling</td></tr>
+                    <tr><td>Cutting Depth</td><td>Adjustable up to 2"</td></tr>
+                    <tr><td>Power Source</td><td>None — 100% manual</td></tr>
+                    <tr><td>Included</td><td>Edger + 2 spare blades + guide</td></tr>
+                    <tr><td>Warranty</td><td>2-year limited</td></tr>
+                </table>
+            </div>
+            <div class="specs-image reveal-right">
+                <img src="images/features.png" alt="EdgeMaster Pro specifications" loading="lazy">
+            </div>
         </div>
-        <table class="specs-table">
-            <tr><td>Product Dimensions</td><td>36" × 8" × 4" (91 × 20 × 10 cm)</td></tr>
-            <tr><td>Weight</td><td>4.5 lbs (2.04 kg) — lightweight yet sturdy</td></tr>
-            <tr><td>Blade Material</td><td>Titanium Alloy — heat-treated for durability</td></tr>
-            <tr><td>Foot Pedal Width</td><td>3.5 inches (8.9 cm) — wide stamped steel</td></tr>
-            <tr><td>Handle Material</td><td>Steel core with rubberized comfort grip</td></tr>
-            <tr><td>Wheel Diameter</td><td>7 inches (18 cm) — smooth rolling</td></tr>
-            <tr><td>Cutting Depth</td><td>Adjustable up to 2 inches (5 cm)</td></tr>
-            <tr><td>Power Source</td><td>None required — 100% manual</td></tr>
-            <tr><td>Maintenance</td><td>Zero — no fuel, oil, or charging needed</td></tr>
-            <tr><td>Included Accessories</td><td>1 × Main edger, 2 × Spare blades, User manual</td></tr>
-        </table>
     </div>
 </section>
 
-<!-- ═══ WHAT'S IN THE BOX ═══ -->
-<section class="inbox" id="inbox">
+<!-- ═══ FAQ ═══ -->
+<section class="faq-section" id="faq">
     <div class="container">
-        <div class="inbox-image"><img src="images/package.png" alt="EdgeMaster Pro package contents" loading="lazy"></div>
-        <div>
-            <div class="section-label">What's Included</div>
-            <h2>Everything You Need</h2>
-            <p class="subtitle" style="margin-left:0;">Open the box and start edging. No assembly headaches, no extra trips to the store.</p>
-            <ul class="inbox-list">
-                <li>
-                    <span class="check">✓</span>
-                    <div>
-                        <div class="item-title">EdgeMaster Pro Main Unit</div>
-                        <div class="item-desc">Fully assembled — ready to use out of the box</div>
-                    </div>
-                </li>
-                <li>
-                    <span class="check">✓</span>
-                    <div>
-                        <div class="item-title">2 Spare Titanium Alloy Blades</div>
-                        <div class="item-desc">Extended cutting life — swap and keep going</div>
-                    </div>
-                </li>
-                <li>
-                    <span class="check">✓</span>
-                    <div>
-                        <div class="item-title">Quick-Start User Guide</div>
-                        <div class="item-desc">Tips for optimal edging technique and blade maintenance</div>
-                    </div>
-                </li>
-                <li>
-                    <span class="check">✓</span>
-                    <div>
-                        <div class="item-title">Bonus: Lawn Care E-Book (Digital)</div>
-                        <div class="item-desc">Professional tips for a picture-perfect lawn</div>
-                    </div>
-                </li>
-            </ul>
+        <div class="faq-header reveal">
+            <div class="section-label">Questions?</div>
+            <h2>Frequently <em>Asked</em></h2>
+            <p class="subtitle">Everything you need to know before you buy.</p>
+        </div>
+        <div class="faq-list reveal">
+            <div class="faq-item open">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <span>How is this different from a gas edger?</span>
+                    <span class="arrow">▾</span>
+                </div>
+                <div class="faq-a">Everything. No gas, no oil, no noise, no fumes. The EdgeMaster Pro uses your body weight to do the work — it's lighter, quieter, and requires zero maintenance. Perfect for early mornings and peaceful weekends.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <span>Is it difficult to use?</span>
+                    <span class="arrow">▾</span>
+                </div>
+                <div class="faq-a">Not at all. The wide foot pedal and ergonomic handle make it intuitive. Most users get the hang of it in their first pass. It's designed to feel natural — like an extension of your leg.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <span>How long does the blade stay sharp?</span>
+                    <span class="arrow">▾</span>
+                </div>
+                <div class="faq-a">The titanium alloy blade stays sharp 3× longer than standard steel blades. We also include 2 spare blades in the package, so you're covered for multiple seasons of regular use.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <span>What kind of lawns does it work on?</span>
+                    <span class="arrow">▾</span>
+                </div>
+                <div class="faq-a">The EdgeMaster Pro works on most standard residential lawns with common grass types (Bermuda, Fescue, Zoysia, Kentucky Blue, etc.). For hard or rocky soil, we recommend edging after rain or watering.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <span>Do I need to assemble it?</span>
+                    <span class="arrow">▾</span>
+                </div>
+                <div class="faq-a">No. The EdgeMaster Pro comes fully assembled. Just unwrap it and start edging. We believe your time is better spent in the garden, not reading instruction manuals.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                    <span>Can I return it if I don't like it?</span>
+                    <span class="arrow">▾</span>
+                </div>
+                <div class="faq-a">Absolutely. We offer a 30-day no-questions-asked money-back guarantee. If the EdgeMaster Pro doesn't transform your lawn care routine, send it back for a full refund.</div>
+            </div>
         </div>
     </div>
 </section>
@@ -561,20 +570,90 @@
 <!-- ═══ CTA ═══ -->
 <section class="cta-section" id="cta">
     <div class="container">
-        <div class="section-label" style="color:#8bcb94;">Ready to Transform Your Lawn?</div>
-        <h2>Get Your EdgeMaster Pro Today</h2>
+        <div class="section-label light" style="color:#8bcb94">Ready to Transform Your Lawn?</div>
+        <h2>Get Your EdgeMaster <em>Pro</em> Today</h2>
         <p class="subtitle">Join thousands of homeowners who've discovered the satisfaction of a perfectly edged lawn — without the noise, fumes, or hassle.</p>
-        <p class="cta-price">Starting at <strong>$36.99</strong> — Free shipping on your first order</p>
-        <a href="#" class="btn btn-primary">🛒 Add to Cart</a>
+        <div style="margin-top:1rem">
+            <p class="cta-price"><strong>$36.99</strong> <span class="original">$49.99</span></p>
+            <p style="font-size:.8rem;color:rgba(255,255,255,.3);margin-top:.25rem">Limited launch pricing — Free shipping on first order</p>
+        </div>
+        <a href="#" class="btn btn-primary" style="margin-top:1.5rem;font-size:1.05rem;padding:1.1rem 3rem">🛒 Add to Cart — $36.99</a>
+        <div class="cta-strip">
+            <span>🔒 Secure Checkout</span>
+            <span>🚚 Free Shipping</span>
+            <span>📦 Ships Today</span>
+            <span>💳 30-Day Returns</span>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ NEWSLETTER ═══ -->
+<section class="newsletter">
+    <div class="container">
+        <div class="section-label">Stay Connected</div>
+        <h2>Get Lawn Care <em>Tips</em> &amp; Exclusive Offers</h2>
+        <p style="color:#5a5a7a;font-size:.9rem;max-width:500px;margin:0 auto">Join 5,000+ subscribers. No spam — just useful advice and early access to new products.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault();alert('Thanks! You\'ve been subscribed.')">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
     </div>
 </section>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
     <div class="container">
-        <p>© 2026 EdgeMaster Pro. All rights reserved. | Designed for the modern lawn.</p>
+        <div>
+            <div class="brand">EdgeMaster<span>®</span> Pro</div>
+            <p>Precision lawn edging for the modern home. Designed with care, built to last, and backed by our 30-day satisfaction guarantee.</p>
+        </div>
+        <div>
+            <h4>Product</h4>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#specs">Specifications</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Warranty</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>© 2026 EdgeMaster Pro. All rights reserved. Crafted with purpose.</p>
+        </div>
     </div>
 </footer>
+
+<script>
+// Scroll navigation
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+// Scroll reveal animations
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+// FAQ first item open by default
+document.querySelectorAll('.faq-item').forEach((item, i) => {
+    if (i === 0) item.classList.add('open');
+});
+</script>
 
 </body>
 </html>
